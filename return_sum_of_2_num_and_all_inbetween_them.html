@@ -22,13 +22,12 @@
           let largest = Math.max(...arr);
           //newarry for nums to be pushed into if new array needed
           let newarr = [];
-
           //checks if first value in original array is also the largest
           //if so, move that value into a new array in the second index and move the other value to the first index.
           //newarr is new  array  that is in order from smallest to largest
           if (arr[0] === largest) {
             console.log(true);
-
+            
             newarr[0] = arr[1];
             newarr[1] = arr[0];
             // newarr.push(numarr[0])
