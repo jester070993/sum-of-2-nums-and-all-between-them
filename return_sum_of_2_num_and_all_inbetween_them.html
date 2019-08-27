@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>
+      Return the sum of both numbers plus sum of everything in between those 2
+      numbers
+    </title>
+  </head>
+  <body>
+    <script>
+      //takes in  only 2 numbers as argument
+      function orderNum(arr) {
+        //totals from index 0 and 1;
+        let total = arr[0] + arr[1];
+        //checks if array is only 2 long
+        if (arr.length == 2) {
+          //finds the larges num in that array, using spread operator in order to split that array
+          // up into idividual elements to be used inside the Math.max function
+          let largest = Math.max(...arr);
+          //newarry for nums to be pushed into if new array needed
+          let newarr = [];
+
+          //checks if first value in original array is also the largest
+          //if so, move that value into a new array in the second index and move the other value to the first index.
+          //newarr is new  array  that is in order from smallest to largest
+          if (arr[0] === largest) {
+            console.log(true);
+
+            newarr[0] = arr[1];
+            newarr[1] = arr[0];
+            // newarr.push(numarr[0])
+            // newarr.push(numarr[1])
+            // console.log(newarr)
+            return [newarr, total];
+          }
+          //else, keep array order as is, orignally smallest to largest
+          else {
+            // console.log(arr)
+            return [arr, total];
+          }
+        }
+        //if arry is more than 2 values, alert user sorry
+        else {
+          alert("sorry, this function only accepts 2 argumens");
+        }
+      }
+
+      let arr = [100, 10];
+      orderNum(arr);
+    </script>
+  </body>
+</html>
