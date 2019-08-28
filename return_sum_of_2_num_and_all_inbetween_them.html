@@ -4,51 +4,98 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
     <title>
       Return the sum of both numbers plus sum of everything in between those 2
       numbers
     </title>
-  </head>
-  <body>
-    <script>
-      //takes in  only 2 numbers as argument
-      function orderNum(arr) {
-        //totals from index 0 and 1;
-        let total = arr[0] + arr[1];
-        //checks if array is only 2 long
-        if (arr.length == 2) {
-          //finds the larges num in that array, using spread operator in order to split that array
-          // up into idividual elements to be used inside the Math.max function
-          let largest = Math.max(...arr);
-          //newarry for nums to be pushed into if new array needed
-          let newarr = [];
-          //checks if first value in original array is also the largest
-          //if so, move that value into a new array in the second index and move the other value to the first index.
-          //newarr is new  array  that is in order from smallest to largest
-          if (arr[0] === largest) {
-            console.log(true);
-            
-            newarr[0] = arr[1];
-            newarr[1] = arr[0];
-            // newarr.push(numarr[0])
-            // newarr.push(numarr[1])
-            // console.log(newarr)
-            return [newarr, total];
-          }
-          //else, keep array order as is, orignally smallest to largest
-          else {
-            // console.log(arr)
-            return [arr, total];
-          }
-        }
-        //if arry is more than 2 values, alert user sorry
-        else {
-          alert("sorry, this function only accepts 2 argumens");
-        }
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        background-color: slategray;
+      }
+      .container {
+        margin: 0 auto;
+        text-align: center;
+        margin-top: 3rem;
+      }
+      .form-inline {
+        justify-content: center;
       }
 
-      let arr = [100, 10];
-      orderNum(arr);
-    </script>
+      span, p{
+          font-weight: bold;
+          color: snow;
+      }
+
+      h1{
+          color: lightgray;
+          margin-bottom: 2rem;
+          text-decoration: underline;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Sum all numbers within a range!</h1>
+
+      <form class="form-inline">
+        <div class="input-group mb-2 mr-sm-2">
+          <div class="input-group-prepend">
+            <div class="input-group-text">Value 1</div>
+          </div>
+          <input
+            type="text"
+            class="form-control input1"
+            placeholder="Enter an integer"
+          />
+        </div>
+        <div class="input-group mb-2 mr-sm-2">
+          <div class="input-group-prepend">
+            <div class="input-group-text">Value 2</div>
+          </div>
+          <input
+            type="text"
+            class="form-control input2"
+            placeholder="Enter an integer"
+          />
+        </div>
+      </form>
+
+      <button class="btn btn-info">Calculate!</button>
+      <span
+        ><p>
+          Disclaimer: If decimal is provided by user, script remove the decimal
+          and use the integer only.
+        </p></span
+      >
+      <span class="one"></span>
+      <span class="two"></span>
+      <span class="tot"></span>
+      <span class="btwn"></span>
+    </div>
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
+    <script src="script.js"></script>
   </body>
 </html>
